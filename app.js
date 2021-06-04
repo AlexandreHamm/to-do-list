@@ -49,8 +49,10 @@ function addListAfterKeypress(event){
 
 enterButton.addEventListener('click', addListAfterClick);
 clearButton.addEventListener('click', () => {
-    window.localStorage.clear();
-    ul.innerHTML = '';
+    if(confirm('Êtes-vous sûr de vouloir clear la liste ?')){
+        window.localStorage.clear();
+        ul.innerHTML = '';
+    }
 });
 
 input.addEventListener('keypress', addListAfterKeypress);
